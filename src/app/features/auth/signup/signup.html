@@ -1,1 +1,222 @@
-<h1>Signup Page</h1>
+<section class="signup">
+
+  <div class="signup__card">
+
+    <h1 class="signup__title">
+      Create your account
+    </h1>
+
+    <p class="signup__subtitle">
+      Join SecureAuth to get started.
+    </p>
+
+    <form
+      class="signup__form"
+      [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()">
+
+      <!-- First Name -->
+
+      <div class="signup__field">
+
+        <label for="firstName">
+          First Name
+        </label>
+
+        <input
+          id="firstName"
+          type="text"
+          formControlName="firstName"
+          placeholder="Enter your first name">
+
+        @if (
+          controls.firstName.touched &&
+          controls.firstName.hasError('required')
+        ) {
+          <small class="signup__error">
+            First name is required.
+          </small>
+        }
+
+        @if (
+          controls.firstName.touched &&
+          controls.firstName.hasError('minlength')
+        ) {
+          <small class="signup__error">
+            First name must be at least 2 characters.
+          </small>
+        }
+
+      </div>
+
+      <!-- Last Name -->
+
+      <div class="signup__field">
+
+        <label for="lastName">
+          Last Name
+        </label>
+
+        <input
+          id="lastName"
+          type="text"
+          formControlName="lastName"
+          placeholder="Enter your last name">
+
+        @if (
+          controls.lastName.touched &&
+          controls.lastName.hasError('required')
+        ) {
+          <small class="signup__error">
+            Last name is required.
+          </small>
+        }
+
+        @if (
+          controls.lastName.touched &&
+          controls.lastName.hasError('minlength')
+        ) {
+          <small class="signup__error">
+            Last name must be at least 2 characters.
+          </small>
+        }
+
+      </div>
+
+      <!-- Email -->
+
+      <div class="signup__field">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email">
+
+        @if (
+          controls.email.touched &&
+          controls.email.hasError('required')
+        ) {
+          <small class="signup__error">
+            Email is required.
+          </small>
+        }
+
+        @if (
+          controls.email.touched &&
+          controls.email.hasError('email')
+        ) {
+          <small class="signup__error">
+            Please enter a valid email address.
+          </small>
+        }
+
+      </div>
+
+      <!-- Password -->
+
+      <div class="signup__field">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Enter your password">
+
+        @if (
+          controls.password.touched &&
+          controls.password.hasError('required')
+        ) {
+          <small class="signup__error">
+            Password is required.
+          </small>
+        }
+
+        @if (
+          controls.password.touched &&
+          controls.password.hasError('minlength')
+        ) {
+          <small class="signup__error">
+            Password must be at least 8 characters.
+          </small>
+        }
+
+        @if (
+          controls.password.touched &&
+          controls.password.hasError('strongPassword')
+        ) {
+          <small class="signup__error">
+            Password must contain at least one number and one special character.
+          </small>
+        }
+
+      </div>
+
+      <!-- Confirm Password -->
+
+      <div class="signup__field">
+
+        <label for="confirmPassword">
+          Confirm Password
+        </label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Confirm your password">
+
+        @if (
+          controls.confirmPassword.touched &&
+          controls.confirmPassword.hasError('required')
+        ) {
+          <small class="signup__error">
+            Please confirm your password.
+          </small>
+        }
+
+        @if (
+          signupForm.hasError('passwordMismatch') &&
+          controls.password.valid &&
+          controls.confirmPassword.valid &&
+          controls.confirmPassword.touched
+        ) {
+          <small class="signup__error">
+            Passwords do not match.
+          </small>
+        }
+
+      </div>
+
+      <button
+        class="signup__button"
+        type="submit"
+        [disabled]="signupForm.invalid">
+
+        Create Account
+
+      </button>
+
+    </form>
+
+    <p class="signup__login">
+
+      Already have an account?
+
+      <a routerLink="/login">
+        Sign In
+      </a>
+
+    </p>
+
+  </div>
+
+</section>

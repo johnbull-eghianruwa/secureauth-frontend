@@ -1,0 +1,104 @@
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--space-3xl) var(--space-xl);
+
+    &__card {
+        width: 100%;
+        max-width: 500px;
+
+        padding: var(--space-2xl);
+
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+
+    &__title {
+        margin-bottom: var(--space-sm);
+
+        color: var(--color-text-primary);
+        font-size: var(--font-size-2xl);
+        text-align: center;
+    }
+
+    &__subtitle {
+        margin-bottom: var(--space-xl);
+
+        color: var(--color-text-secondary);
+        text-align: center;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+
+        label {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        input {
+            padding: var(--space-md);
+
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+
+            font-size: var(--font-size-md);
+
+            &:focus {
+                outline: none;
+                border-color: var(--color-primary);
+            }
+
+            &__error {
+                margin-top: var(--space-xs);
+
+                color: var(--color-error);
+
+                font-size: var(--font-size-sm);
+            }
+        }
+    }
+
+    &__button {
+        padding: var(--space-md);
+
+        border: none;
+        border-radius: var(--radius-md);
+
+        background: var(--color-primary);
+        color: var(--color-surface);
+
+        font-size: var(--font-size-md);
+        font-weight: 600;
+        cursor: pointer;
+
+        transition: var(--transition);
+
+        &:hover {
+            background: var(--color-primary-hover);
+        }
+    }
+
+    &__login {
+        margin-top: var(--space-xl);
+        text-align: center;
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+}

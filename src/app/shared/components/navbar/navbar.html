@@ -1,1 +1,55 @@
-<p>navbar works!</p>
+<nav class="navbar">
+
+    <div class="navbar__container">
+
+        <a
+            class="navbar__logo"
+            routerLink="/">
+            SecureAuth
+        </a>
+
+        <ul class="navbar__menu">
+
+            @if (!user) {
+
+                <li class="navbar__item">
+                    <a
+                        class="navbar__link"
+                        routerLink="/login"
+                        routerLinkActive="active">
+                        Login
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a
+                        class="navbar__button"
+                        routerLink="/signup">
+                        Sign Up
+                    </a>
+                </li>
+
+            } @else {
+
+                <li class="navbar__item">
+                    <span class="navbar__link">
+                        Welcome {{ user.firstName }}
+                    </span>
+                </li>
+
+                <li class="navbar__item">
+                    <button
+                        type="button"
+                        class="navbar__button"
+                        (click)="logout()">
+                        Logout
+                    </button>
+                </li>
+
+            }
+
+        </ul>
+
+    </div>
+
+</nav>

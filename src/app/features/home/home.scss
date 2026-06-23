@@ -1,0 +1,71 @@
+@use '../../../styles/index' as *;
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-3xl) var(--space-xl);
+
+    &__container {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: var(--space-lg);
+
+        color: var(--color-text-primary);
+        font-size: var(--font-size-3xl);
+        font-weight: 700;
+        line-height: 1.2;
+
+        span {
+            display: block;
+            color: var(--color-primary);
+        }
+    }
+
+    &__description {
+        margin-bottom: var(--space-2xl);
+
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-lg);
+        line-height: 1.7;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-md);
+    }
+
+    &__button {
+        padding: var(--space-sm) var(--space-xl);
+
+        border-radius: var(--radius-md);
+
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+
+        &--primary {
+            color: var(--color-surface);
+            background: var(--color-primary);
+
+            &:hover {
+                background: var(--color-primary-hover);
+            }
+        }
+
+        &--secondary {
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+
+            &:hover {
+                color: var(--color-surface);
+                background: var(--color-primary);
+            }
+        }
+    }
+}
