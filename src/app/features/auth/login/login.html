@@ -1,96 +1,96 @@
 <section class="login">
 
-  <div class="login__card">
+    <div class="login__card">
 
-    <h1 class="login__title">
-      Sign In
-    </h1>
+        <h1 class="login__title">
+            Sign In
+        </h1>
 
-    <p class="login__subtitle">
-      Welcome back to SecureAuth.
-    </p>
+        <p class="login__subtitle">
+            Welcome back to SecureAuth.
+        </p>
 
-    <form
-      class="login__form"
-      [formGroup]="loginForm"
-      (ngSubmit)="onSubmit()">
+        <form
+            class="login__form"
+            [formGroup]="loginForm"
+            (ngSubmit)="onSubmit()">
 
-      <div class="login__field">
+            <div class="login__field">
 
-        <label for="email">
-          Email
-        </label>
+                <label for="email">
+                Email
+                </label>
 
-        <input
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="Enter your email">
+                <input
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Enter your email"
+                >
 
-        @if (
-          controls.email.touched &&
-          controls.email.hasError('required')
-        ) {
-          <small class="login__error">
-            Email is required.
-          </small>
-        }
+                @if (
+                controls.email.touched &&
+                controls.email.hasError('required')
+                ) {
+                    <small class="login__error">
+                        Email is required.
+                    </small>
+                }
 
-        @if (
-          controls.email.touched &&
-          controls.email.hasError('email')
-        ) {
-          <small class="login__error">
-            Please enter a valid email address.
-          </small>
-        }
+                @if (
+                controls.email.touched &&
+                controls.email.hasError('email')
+                ) {
+                    <small class="login__error">
+                        Please enter a valid email address.
+                    </small>
+                }
 
-      </div>
+            </div>
 
-      <div class="login__field">
+            <div class="login__field">
 
-        <label for="password">
-          Password
-        </label>
+                <label for="password">
+                    Password
+                </label>
 
-        <input
-          id="password"
-          type="password"
-          formControlName="password"
-          placeholder="Enter your password">
+                <input
+                    id="password"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Enter your password"
+                >
 
-        @if (
-          controls.password.touched &&
-          controls.password.hasError('required')
-        ) {
-          <small class="login__error">
-            Password is required.
-          </small>
-        }
+                @if (
+                    controls.password.touched &&
+                    controls.password.hasError('required')
+                ) {
+                    <small class="login__error">
+                        Password is required.
+                    </small>
+                }
 
-      </div>
+            </div>
 
-      <button
-        class="login__button"
-        type="submit"
-        [disabled]="loginForm.invalid">
+            <button
+                class="login__button"
+                type="submit"
+                [disabled]="loginForm.invalid">
 
-        Sign In
+                Sign In
 
-      </button>
+            </button>
 
-    </form>
+        </form>
 
-    <p class="login__signup">
+        <p class="login__signup">
 
-      Don't have an account?
+            Don't have an account?
 
-      <a routerLink="/signup">
-        Create Account
-      </a>
+            <a routerLink="/signup">
+                Create Account
+            </a>
 
-    </p>
-
+        </p>
   </div>
-
 </section>

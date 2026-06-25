@@ -8,15 +8,16 @@ describe('Home', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [Home],
+            imports: [Home]
         }).compileComponents();
 
-            fixture = TestBed.createComponent(Home);
-            component = fixture.componentInstance;
-            await fixture.whenStable();
-        });
+        fixture = TestBed.createComponent(Home);
+        component = fixture.componentInstance;
 
-        it('should create', () => {
-            expect(component).toBeTruthy();
+        await fixture.whenStable();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
     });
 });
